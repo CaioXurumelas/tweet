@@ -103,6 +103,107 @@ body {
     width: 100%;
 }
 
+.box img {
+    cursor: pointer;
+}
+
+
+/*ANIMATIONS*/
+
+@keyframes comments {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes retweets {
+    0% {
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: scale(1.5);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes favorites {
+    0% {
+        transform: scale(1);
+        left: 0;
+    }
+    25% {
+        transform: scale(1.5);
+        left: 5px;
+    }
+    50% {
+        transform: scale(1.5);
+        left: -5px;
+    }
+    100% {
+        transform: scale(1);
+        left: 0;
+    }
+}
+
+@keyframes shares {
+    0% {
+        transform: scale(1);
+        top: 0;
+        transform: blur(0);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.1);
+        top: -5px;
+        transform: blur(3px);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        top: 5px;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.comments:hover {
+    animation: comments 0.5s ease-out forwards;
+}
+
+.retweets:hover {
+    animation: retweets 0.5s ease-out forwards;
+}
+
+.favorites {
+    position: relative;
+}
+
+.favorites:hover {
+    animation: favorites 0.5s ease-out forwards;
+}
+
+.shares {
+    position: relative;
+}
+
+.shares:hover {
+    animation: shares 0.5s ease-out forwards;
+}
+
+
+/*RESPONSVO*/
+
 @media (max-width:1024px) {
     .tweet-container {
         padding: 10px;
